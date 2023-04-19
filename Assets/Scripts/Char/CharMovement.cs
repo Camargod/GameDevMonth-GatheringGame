@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class CharMovement : MonoBehaviour
 {
-    public Rigidbody2D body;
+    public Rigidbody2D feet;
 
     public ContactFilter2D ContactFilter;
 
@@ -34,7 +34,7 @@ public class CharMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            if (body.IsTouching(background))
+            if (feet.IsTouching(background))
             {
                 Jump();
             }
@@ -46,14 +46,14 @@ public class CharMovement : MonoBehaviour
         Vector2 vec = new Vector2();
         vec.x = vecX * 10 * Time.deltaTime * 50;
         vec.y = vecY * 10 * Time.deltaTime * 50;
-        body.AddForce(vec);
+        feet.AddForce(vec);
     }
 
     private void Jump()
     { 
         Vector2 vec = new Vector2();
         vec.y = 14;
-        body.AddForce(vec);
+        feet.AddForce(vec);
     }
 
 }
