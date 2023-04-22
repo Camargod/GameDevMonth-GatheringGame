@@ -9,7 +9,11 @@ public class CharMovement : MonoBehaviour
 
     public ContactFilter2D ContactFilter;
 
-    public Collider2D background;
+    public List<CompositeCollider2D> collisionListCanJump;
+
+    public float jumpImpulse, speedX;
+    public float maxSpeedY = 0, maxSpeedX = 0;
+    public float speedMultiplier = 10;
 
     //private bool ableToJump = true;
 
@@ -34,26 +38,32 @@ public class CharMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            if (feet.IsTouching(background))
+            collisionListCanJump.ForEach(collider =>
             {
-                Jump();
-            }
+                if (feet.IsTouching(collider))
+                {
+                    Jump();
+                }
+            });
         }
     }
 
     private void Move(int vecX, int vecY)
     {
+        if (feet.velocity.x >= maxSpeedX || feet.velocity.x <= -maxSpeedX) vecX = 0;
+        if (feet.velocity.y >= maxSpeedY || feet.velocity.y <= -maxSpeedY) vecY = 0;
+
         Vector2 vec = new Vector2();
-        vec.x = vecX * 10 * Time.deltaTime * 50;
-        vec.y = vecY * 10 * Time.deltaTime * 50;
+        vec.x = vecX * speedMultiplier * Time.deltaTime * speedX;
+        vec.y = vecY * speedMultiplier * Time.deltaTime * jumpImpulse;
         feet.AddForce(vec);
     }
 
     private void Jump()
     { 
         Vector2 vec = new Vector2();
-        vec.y = 14;
-        feet.AddForce(vec);
+        vec.y = jumpImpulse;
+        feet.velocity = vec;
     }
 
 }
