@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Char/CharMovement.cs">
     <Files>
       <File FileName="Assets/Scripts/Enemy/EnemyDefaultBehavior.cs" Line="41" Column="6" NotebookId="1" />
-      <File FileName="Assets/Scripts/Char/CharMovement.cs" Line="41" Column="43" NotebookId="1" />
+      <File FileName="Assets/Scripts/Char/CharMovement.cs" Line="44" Column="18" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +20,9 @@
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
+        <State>
+          <Value>feet.IsTouching(collider)</Value>
+        </State>
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
