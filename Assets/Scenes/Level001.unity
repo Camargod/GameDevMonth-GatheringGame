@@ -4508,6 +4508,10 @@ PrefabInstance:
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7398724803558674228, guid: 6e263a826f0ac403db95589b3f5d3ceb, type: 3}
+      propertyPath: nextSceneDebug
+      value: Level002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398724803558674228, guid: 6e263a826f0ac403db95589b3f5d3ceb, type: 3}
       propertyPath: collisionListCanJump.Array.size
       value: 2
       objectReference: {fileID: 0}

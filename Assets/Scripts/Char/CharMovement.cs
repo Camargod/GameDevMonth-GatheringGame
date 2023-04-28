@@ -1,7 +1,9 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+
+using UnityEngine.SceneManagement;
+
 
 public class CharMovement : MonoBehaviour
 {
@@ -14,6 +16,9 @@ public class CharMovement : MonoBehaviour
     public float jumpImpulse, speedX;
     public float maxSpeedY = 0, maxSpeedX = 0;
     public float speedMultiplier = 10;
+
+
+    public string nextSceneDebug = "";
 
     //private bool ableToJump = true;
 
@@ -45,6 +50,10 @@ public class CharMovement : MonoBehaviour
                     Jump();
                 }
             });
+        }
+        if (Input.GetKey(KeyCode.Backslash))
+        {
+            SceneManager.LoadScene(nextSceneDebug);
         }
     }
 

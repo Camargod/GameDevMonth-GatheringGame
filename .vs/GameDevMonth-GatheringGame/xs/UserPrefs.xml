@@ -1,39 +1,27 @@
 ﻿<Properties StartupConfiguration="{B0250DBD-6D90-7C1C-95BA-1D04D633EFC3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Char/CharMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/EnemyDefaultBehavior.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy/EnemyDefaultBehavior.cs" Line="41" Column="6" NotebookId="1" />
-      <File FileName="Assets/Scripts/Char/CharMovement.cs" Line="44" Column="18" NotebookId="1" />
+      <File FileName="Assets/Scripts/Enemy/EnemyDefaultBehavior.cs" Line="41" Column="6" />
+      <File FileName="Assets/Scripts/Char/CharMovement.cs" Line="44" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="GameDevMonth-GatheringGame" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Char" expanded="True">
-                  <Node name="CharMovement.cs" selected="True" />
-                </Node>
+                <Node name="Char" expanded="True" />
                 <Node name="Enemy" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>feet.IsTouching(collider)</Value>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="Unity" expanded="True" selected="True" />
-        </State>
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="eab0e76d-3ffc-4082-80f9-680c8f21579f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4f5ee627-ea9e-4044-9df6-2d8cbe7dcb03" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
