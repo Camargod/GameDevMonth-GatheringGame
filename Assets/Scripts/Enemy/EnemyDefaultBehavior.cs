@@ -8,13 +8,13 @@ public class EnemyDefaultBehavior : MonoBehaviour
     public float enemySpeed = 10;
 
     Rigidbody2D body;
-    BoxCollider2D collider;
+    BoxCollider2D Collider;
 
     // Start is called before the first frame update
     void Start()
     {
         this.body = GetComponent<Rigidbody2D>();
-        this.collider = GetComponent<BoxCollider2D>();
+        this.Collider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
