@@ -22,6 +22,11 @@ public class CharMovement : MonoBehaviour
 
     public string nextSceneDebug = "";
 
+    public int timer = 100;
+    private float timerFloat;
+
+    public bool timerEnabled = true;
+
     //private bool ableToJump = true;
 
     //private bool isGrounded => body.IsTouching(GetComponent("Background").GetComponent<Collider2D>());
@@ -29,6 +34,7 @@ public class CharMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       timerFloat = timer;
        instance = this;
        sprite = GetComponent<SpriteRenderer>();
     }
@@ -58,6 +64,8 @@ public class CharMovement : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneDebug);
         }
+
+        runTimer();
     }
 
     private void Move(int vecX, int vecY)
@@ -93,5 +101,13 @@ public class CharMovement : MonoBehaviour
         }
          CharacterScript.bc.enabled = true;
     }
-   
+
+    private void runTimer()
+    {
+        if(timerEnabled && timer > 0)
+        {
+            timerFloat -= Time.deltaTime;
+            timer = ((int)timerFloat);
+        }
+    }
 }

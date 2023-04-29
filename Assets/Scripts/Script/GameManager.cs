@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
+    public Text timerText;
+
     public int score;
     public int Life = 3;
+    public float timer;
     [SerializeField] private string GameOver;
     [SerializeField] private GameObject heartHUD;
     [SerializeField] private GameObject heart1HUD;
@@ -26,6 +29,19 @@ public class GameManager : MonoBehaviour
         instance = this;
         totalScore = PlayerPrefs.GetInt("score");
         totalLife = PlayerPrefs.GetInt("HP");
+        //timer = PlayerPrefs.GetFloat("timer");
+    }
+
+    public void Update()
+    {
+        timer -= Time.deltaTime;
+        int timerInt = ((int)timer);
+        timerText.text = timerInt.ToString();
+
+        if(timerInt <= 0)
+        {
+            SceneManager.LoadScene(GameOver);
+        }
     }
 
     // Update is called once per frame
