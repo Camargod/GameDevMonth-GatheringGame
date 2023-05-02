@@ -39,6 +39,16 @@ public class EnemyDefaultBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(body.velocity.x)), transform.localScale.y);
-    }   
+        if (collision.tag != "Candies")
+        {
+            transform.localScale = new Vector2(-(Mathf.Sign(body.velocity.x)), transform.localScale.y);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag != "Candies")
+        {
+            transform.localScale = new Vector2(-(Mathf.Sign(body.velocity.x)), transform.localScale.y);
+        }
+    }
 }
