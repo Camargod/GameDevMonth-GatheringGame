@@ -8,7 +8,7 @@ public class EnemyDefaultBehavior : MonoBehaviour
     public float enemySpeed = 10;
 
     Rigidbody2D body;
-    BoxCollider2D Collider;
+    BoxCollider2D Collider ;
 
     // Start is called before the first frame update
     void Start()
@@ -40,5 +40,7 @@ public class EnemyDefaultBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         transform.localScale = new Vector2(-(Mathf.Sign(body.velocity.x)), transform.localScale.y);
+
     }   
+    
 }
