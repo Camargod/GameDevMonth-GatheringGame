@@ -8,7 +8,7 @@ public class EnemyDefaultBehavior : MonoBehaviour
     public float enemySpeed = 10;
 
     Rigidbody2D body;
-    BoxCollider2D Collider;
+    BoxCollider2D Collider ;
 
     // Start is called before the first frame update
     void Start()
