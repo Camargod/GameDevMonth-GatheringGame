@@ -19,9 +19,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject heart1HUD;
     [SerializeField] private GameObject heart2HUD;
     [SerializeField] private GameObject heart3HUD;
-    [SerializeField] static float totalScore;
+    static int totalScore;
+    static int finalScore;
     public static bool save;
-    private float totalLife;
+    private int totalLife;
 
     public static GameManager instance;
 
@@ -29,31 +30,34 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-    //    totalScore = PlayerPrefs.GetInt("score");
-        totalLife = PlayerPrefs.GetInt("HP");
+        //totalLife = PlayerPrefs.GetInt("HP");
         //timer = PlayerPrefs.GetFloat("timer");
         save = false;
-        totalScore = PlayerPrefs.GetFloat("totalScore");
+        totalScore = PlayerPrefs.GetInt("totalScore");
     }
 
     public void Update()
     {
         timer -= Time.deltaTime;
         int timerInt = ((int)timer);
+        totalScore = finalScore - (-timerInt)*100;
         timerText.text = timerInt.ToString();
+        scoreText.text = totalScore.ToString();
+
+        saveScore();
 
         if(timerInt <= 0)
         {
             SceneManager.LoadScene(GameOver);
         }
-        saveScore();
+
         NextFase();
                
     }
 
     private void saveScore(){
         if(save == true){
-            PlayerPrefs.SetFloat("totalScore", totalScore);
+            PlayerPrefs.SetInt("totalScore", totalScore);
             PlayerPrefs.Save();
         }
     }
@@ -67,7 +71,6 @@ public class GameManager : MonoBehaviour
     public void UpdateScore()
     {
         score++;
-
         //PlayerPrefs.SetInt("score", totalScore);
     }
     public void LessLife()
@@ -104,10 +107,10 @@ public class GameManager : MonoBehaviour
     }
      public void NextFase(){
         if(score >= scoreLimit){
-        totalScore = totalScore + timer;
+        finalScore = totalScore;
         save = true;
-        scoreText.text = totalScore.ToString();
         SceneManager.LoadScene(NFase);
+
           
         }
      }

@@ -4399,7 +4399,8 @@ MonoBehaviour:
   timer: 120
   GameOver: GameOver
   NFase: Level002
-  scoreLimit: 94
+  scoreLimit: 95
+  PainelTutorial: {fileID: 0}
   heartHUD: {fileID: 1409563548}
   heart1HUD: {fileID: 1409563547}
   heart2HUD: {fileID: 1409563546}
